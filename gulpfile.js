@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
 	sass = require('gulp-ruby-sass'),
 	uglify = require('gulp-uglify'),
+	//concat = require('gulp-concat'),
 	plumber = require('gulp-plumber'),
 	autoprefixer = require('gulp-autoprefixer'),
 	rename = require('gulp-rename');
@@ -10,6 +11,7 @@ var gulp = require('gulp'),
 */
 gulp.task('scripts', function() {
 	gulp.src(['project/js/**/*.js', '!project/js/**/*.min.js'])
+	//.pipe(concat('scripts.js'))
 	.pipe(plumber())
 	.pipe(rename({suffix: '.min'}))
 	.pipe(uglify())
